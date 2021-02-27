@@ -8,6 +8,7 @@ public class SendPosition : MonoBehaviour
     [Header("Send Parameters")]
     [SerializeField] bool useObjectName = true;
     [SerializeField] string address;
+    [SerializeField] bool playerRelativePosition;
 
     [Header("Debug")]
     public bool verbose = false;
@@ -25,7 +26,6 @@ public class SendPosition : MonoBehaviour
     {
         yield return new WaitUntil(() => OSCManager.Instance != null);
         message.address = useObjectName ? $"/{name.Replace(" ", "").ToLower()}" : $"/{address.Replace(" ", "").ToLower()}";
-        //message.address = $"/{address.Replace(" ", "").ToLower()}";
         GetPosition();
         InitPos();
         OSCManager.Instance.OnModuleCreate?.Invoke(address, message);
@@ -57,9 +57,17 @@ public class SendPosition : MonoBehaviour
     void GetPosition()
     {
         if (verbose) Debug.LogError("FROM GETMESSAGE");
-        pos[0] = transform.position.x;
-        pos[1] = transform.position.y;
-        pos[2] = transform.position.z;
+        if (playerRelativePosition)
+        {
+            pos[0] = OSCManager.Instance.playerHead.transform.InverseTransformPoint(transform.position).x;
+            pos[1] = OSCManager.Instance.playerHead.transform.InverseTransformPoint(transform.position).y;
+            pos[2] = OSCManager.Instance.playerHead.transform.InverseTransformPoint(transform.position).z;
+        } else
+        {
+            pos[0] = transform.position.x;
+            pos[1] = transform.position.y;
+            pos[2] = transform.position.z;
+        }
     }
 
     void SetMessage()

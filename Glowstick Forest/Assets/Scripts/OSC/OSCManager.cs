@@ -13,6 +13,7 @@ public class OSCManager : MonoBehaviour
     [SerializeField] bool enableOSC = false;
     public OSC osc;
     public static OSCManager Instance;
+    [SerializeField] public GameObject playerHead;
 
     Dictionary<string, OscMessage> messages = new Dictionary<string, OscMessage>();
     ArrayList oscMessages = new ArrayList();
@@ -61,10 +62,10 @@ public class OSCManager : MonoBehaviour
         oscMessages = new ArrayList((from m in messages
                                      select m.Value).ToArray());
 
-        foreach (KeyValuePair<string, OscMessage> kvp in messages)
-        {
-            Debug.LogWarning($"{kvp.Key}, {kvp.Value}");
-        }
+        //foreach (KeyValuePair<string, OscMessage> kvp in messages)
+        //{
+        //    Debug.LogWarning($"{kvp.Key}, {kvp.Value}");
+        //}
     }
 
     
