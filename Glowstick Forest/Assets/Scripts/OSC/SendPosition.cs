@@ -1,0 +1,82 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SendPosition : MonoBehaviour
+{
+    #region Editor Variables
+    [Header("Send Parameters")]
+    [SerializeField] bool useObjectName = true;
+    [SerializeField] string address;
+
+    [Header("Debug")]
+    public bool verbose = false;
+    #endregion
+
+    #region Variables
+
+    OscMessage message = new OscMessage();
+    bool initiated = false;
+    float[] pos = new float[3];
+
+    #endregion
+
+    IEnumerator Start()
+    {
+        yield return new WaitUntil(() => OSCManager.Instance != null);
+        message.address = useObjectName ? $"/{name.Replace(" ", "").ToLower()}" : $"/{address.Replace(" ", "").ToLower()}";
+        //message.address = $"/{address.Replace(" ", "").ToLower()}";
+        GetPosition();
+        InitPos();
+        OSCManager.Instance.OnModuleCreate?.Invoke(address, message);
+        if (verbose) Debug.LogError("FROM START");
+        initiated = true;
+    }
+
+    private void OnDestroy()
+    {
+        OSCManager.Instance.OnModuleDestroy?.Invoke(address);
+    }
+
+    private void FixedUpdate()
+    {
+        if (!initiated)
+            return;
+
+        GetPosition();
+    }
+
+    private void Update()
+    {
+        if (!initiated)
+            return;
+
+        SetMessage();
+    }
+
+    void GetPosition()
+    {
+        if (verbose) Debug.LogError("FROM GETMESSAGE");
+        pos[0] = transform.position.x;
+        pos[1] = transform.position.y;
+        pos[2] = transform.position.z;
+    }
+
+    void SetMessage()
+    {
+        if (verbose) Debug.LogError("FROM SETMESSAGE");
+        message.values[0] = pos[0];
+        message.values[1] = pos[1];
+        message.values[2] = pos[2];
+        OSCManager.Instance.UpdateValue(address, message);
+        if (verbose) Debug.Log($"{transform.name} SENDING: {message}");
+    }
+
+    void InitPos()
+    {
+        if (verbose) Debug.LogError("FROM INITPOS");
+        message.values.Add(pos[0]);
+        message.values.Add(pos[1]);
+        message.values.Add(pos[2]);
+    }
+}

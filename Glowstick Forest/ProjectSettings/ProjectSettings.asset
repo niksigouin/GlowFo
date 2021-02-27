@@ -179,7 +179,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.BeardedNinjaGames.VRInteractionFramework
+    Standalone: com.SigNik.GlowstickForest
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 23
