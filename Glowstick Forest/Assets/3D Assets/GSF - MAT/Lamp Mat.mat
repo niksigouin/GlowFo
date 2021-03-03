@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Material.011
+  m_Name: Lamp Mat
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: _EMISSION _METALLICSPECGLOSSMAP
   m_LightmapFlags: 2
@@ -22,19 +22,19 @@ Material:
     m_TexEnvs:
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 35bb3910b72f55b46a25b9851413e744, type: 3}
-        m_Scale: {x: 10, y: 10}
+        m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 99e3eebc3ba9232459410faf755b5c96, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3ac28783ed6b6884b94c149473fd1aca, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 35bb3910b72f55b46a25b9851413e744, type: 3}
-        m_Scale: {x: 10, y: 10}
+        m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 2800000, guid: fe0b174693dd7f74f878450bfd5c07be, type: 3}
@@ -71,9 +71,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.61, g: 0.37902912, b: 0.17174757, a: 1}
+    - _BaseColor: {r: 0.27699292, g: 0, b: 0.7075472, a: 1}
     - _Color: {r: 0.009134059, g: 0.015208517, b: 0.013702083, a: 1}
-    - _EmissionColor: {r: 0, g: 1, b: 0.9713807, a: 1}
+    - _EmissionColor: {r: 2.1132078, g: 0.76974636, b: 0.7077253, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7866554762677642166
