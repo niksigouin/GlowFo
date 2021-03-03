@@ -9,6 +9,7 @@ public class SendPosition : MonoBehaviour
     [SerializeField] bool useObjectName = true;
     [SerializeField] string address;
     [SerializeField] bool playerRelativePosition;
+    [SerializeField] float maxDistance = 25f;
 
     [Header("Debug")]
     public bool verbose = false;
@@ -19,6 +20,7 @@ public class SendPosition : MonoBehaviour
     OscMessage message = new OscMessage();
     bool initiated = false;
     float[] pos = new float[3];
+    float distFromPlayer;
 
     #endregion
 
@@ -56,6 +58,7 @@ public class SendPosition : MonoBehaviour
 
     void GetPosition()
     {
+        
         if (verbose) Debug.LogError("FROM GETMESSAGE");
         if (playerRelativePosition)
         {
@@ -76,6 +79,7 @@ public class SendPosition : MonoBehaviour
         message.values[0] = pos[0];
         message.values[1] = pos[1];
         message.values[2] = pos[2];
+        message.values[3] = PlayState();
         OSCManager.Instance.UpdateValue(address, message);
         if (verbose) Debug.Log($"{transform.name} SENDING: {message}");
     }
@@ -86,5 +90,12 @@ public class SendPosition : MonoBehaviour
         message.values.Add(pos[0]);
         message.values.Add(pos[1]);
         message.values.Add(pos[2]);
+        message.values.Add(PlayState());
+    }
+
+    int PlayState()
+    {
+        distFromPlayer = Vector3.Distance(OSCManager.Instance.playerHead.transform.position, transform.position);
+        return distFromPlayer > maxDistance ? 0 : 1;
     }
 }

@@ -11,7 +11,7 @@ using Object = UnityEngine.Object;
 public class OSCManager : MonoBehaviour
 {
     [SerializeField] bool enableOSC = false;
-    public OSC osc;
+    [SerializeField] OSC osc;
     public static OSCManager Instance;
     [SerializeField] public GameObject playerHead;
 
@@ -24,9 +24,18 @@ public class OSCManager : MonoBehaviour
     private void Awake()
     {
         if (Instance == null) Instance = this; else Destroy(this.gameObject);
-        osc = GetComponent<OSC>();
+        if(osc == null) osc = GetComponent<OSC>();
         OnModuleCreate += AddModule;
         OnModuleDestroy += RemoveModule;
+    }
+
+    private void OnDestroy()
+    {
+        OscMessage global = new OscMessage();
+        global.address = "/manager";
+        global.values.Add(0);
+        osc.Send(global);
+        Debug.Log($"Shutting Down: {global}");
     }
 
     private void Update()
@@ -61,11 +70,6 @@ public class OSCManager : MonoBehaviour
     void CompareList() {
         oscMessages = new ArrayList((from m in messages
                                      select m.Value).ToArray());
-
-        //foreach (KeyValuePair<string, OscMessage> kvp in messages)
-        //{
-        //    Debug.LogWarning($"{kvp.Key}, {kvp.Value}");
-        //}
     }
 
     
