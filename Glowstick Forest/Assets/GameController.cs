@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
 
 
     public Action<bool> OnTimeTrigger;
+    public Action<bool> TimeSetTrigger;
 
 
     private void Awake()
@@ -23,14 +24,12 @@ public class GameController : MonoBehaviour
         if (Instance == null) Instance = this; else Destroy(this.gameObject);
     }
     
-    
-    // Start is called before the first frame update
-    void Start()
+    public void ToggleWorldLight(bool state)
     {
-        
+        TimeSetTrigger?.Invoke(state);
     }
+    
 
-    // Update is called once per frame
     void Update()
     {
         if(cycleObject.Time >= onTime || cycleObject.Time <= offTime)

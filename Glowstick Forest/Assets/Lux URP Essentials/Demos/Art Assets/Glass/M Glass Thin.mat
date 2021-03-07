@@ -8,14 +8,16 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M Glass Thin
-  m_Shader: {fileID: 4800000, guid: be01a6202122cde4e9b0bd2e7f93a961, type: 3}
-  m_ShaderKeywords: _GEOREFRACTIONS _MASKMAP _NORMALMAP _RIMLIGHTING
+  m_Shader: {fileID: -6465566751694194690, guid: 41cf6f6074679864388e3aaabf9306b7,
+    type: 3}
+  m_ShaderKeywords: _ENVIRONMENTREFLECTIONS_OFF _SPECULAR_SETUP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
-  disabledShaderPasses: []
+  disabledShaderPasses:
+  - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -24,7 +26,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: c3bb1d5298b924d80959c9f822ffe414, type: 3}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -32,6 +38,18 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -45,23 +63,28 @@ Material:
     - _Blend: 0
     - _BumpRefraction: 0
     - _BumpScale: 1
-    - _Cull: 2
+    - _Cull: 0
     - _CustomWrap: 0.4
-    - _Cutoff: 0.682
+    - _Cutoff: 0.638
     - _Distortion: 0.01
     - _DonNotRefractForeground: 0
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _EnableBaseMap: 0
     - _EnableGeoRefr: 1
     - _EnableMaskMap: 1
     - _EnableScreenEdgeFade: 0
     - _EnableTintMap: 0
-    - _EnvironmentReflections: 1
+    - _EnvironmentReflections: 0
     - _ExcludeForeground: 0
-    - _FinalAlpha: 1
+    - _FinalAlpha: 0
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
     - _IOR: 1.5
     - _IsThinShell: 0.98
+    - _Metallic: 0
     - _Occlusion: 1
+    - _OcclusionStrength: 1
     - _PixelDepth: 19.4
     - _QueueOffset: 0
     - _RayLength: 1
@@ -75,24 +98,42 @@ Material:
     - _ScreenEdgeFade: 8
     - _ShadowOffset: 1
     - _ShadowStrength: 0.7
-    - _Smoothness: 0.8
-    - _SmoothnessBase: 0.5
+    - _Smoothness: 0
+    - _SmoothnessBase: 0.539
+    - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 1
+    - _SrcBlend: 5
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilFail: 0
     - _StencilOp: 0
     - _StencilZFail: 0
+    - _Surface: 1
     - _TranslucencyPower: 7
     - _TranslucencyStrength: 1
+    - _WorkflowMode: 0
     - _WriteMask: 255
-    - _ZWrite: 1
+    - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 0}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 0.5019608}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlassTint: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 1, g: 0.002124689, b: 1, a: 1}
-    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _SpecColorBase: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _SpecColor: {r: 0.19999993, g: 0.19999993, b: 0.19999993, a: 0}
+    - _SpecColorBase: {r: 0.19999993, g: 0.19999993, b: 0.19999993, a: 0}
+    - _Specular: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 0.003921569}
   m_BuildTextureStacks: []
+--- !u!114 &1729331958708149794
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
