@@ -11,7 +11,7 @@ using Object = UnityEngine.Object;
 public class OSCManager : MonoBehaviour
 {
     [SerializeField] bool enableOSC = false;
-    [SerializeField] OSC osc;
+    [SerializeField] public OSC osc;
     public static OSCManager Instance;
     [SerializeField] public GameObject playerHead;
 
