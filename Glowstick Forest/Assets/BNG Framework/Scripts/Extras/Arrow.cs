@@ -21,6 +21,9 @@ namespace BNG {
 
         public Projectile ProjectileObject;
 
+        public bool _useOtherSound = true;
+        public AudioSource otherSound_hit;
+
         // Get this value from the ProjectileObject
         float arrowDamage;
 
@@ -159,7 +162,10 @@ namespace BNG {
 
                     Flying = false;
 
-                    playSoundInterval(2.462f, 2.68f);
+                    if (!_useOtherSound) playSoundInterval(2.462f, 2.68f);
+                    else otherSound_hit.Play();
+
+
                 }                                
             }            
         }
