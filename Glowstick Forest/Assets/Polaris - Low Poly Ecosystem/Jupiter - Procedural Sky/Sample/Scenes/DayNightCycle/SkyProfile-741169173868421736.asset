@@ -22,12 +22,12 @@ Material:
     m_TexEnvs: []
     m_Floats:
     - _OverheadCloudAltitude: 1000
-    - _OverheadCloudAnimationSpeed: 50
+    - _OverheadCloudAnimationSpeed: 10
     - _OverheadCloudFlowDirectionX: 0.575
     - _OverheadCloudFlowDirectionZ: 1
-    - _OverheadCloudShadowClipMask: 0.035
+    - _OverheadCloudShadowClipMask: 0
     - _OverheadCloudSize: 2.72
-    - _OverheadCloudStep: 2
+    - _OverheadCloudStep: 3
     m_Colors:
     - _OverheadCloudColor: {r: 1, g: 1, b: 1, a: 0.22709298}
   m_BuildTextureStacks: []
@@ -76,28 +76,28 @@ MonoBehaviour:
   starsTwinkleMap: {fileID: 0}
   enableSun: 1
   sunTexture: {fileID: 0}
-  sunColor: {r: 0.98326683, g: 0.9556562, b: 0.9100987, a: 0}
-  sunSize: 0.049
-  sunSoftEdge: 0.17
+  sunColor: {r: 1, g: 0.9774082, b: 0.9386792, a: 0}
+  sunSize: 0.639
+  sunSoftEdge: 0.674
   sunGlow: 0.45
   useBakedSun: 0
   sunCubemap: {fileID: 0}
-  sunLightColor: {r: 1, g: 0.99511117, b: 0.8632076, a: 1}
+  sunLightColor: {r: 1, g: 1, b: 0.8630136, a: 1}
   sunLightIntensity: 1
   enableMoon: 1
   moonTexture: {fileID: 0}
   moonColor: {r: 1, g: 1, b: 1, a: 0.6295172}
-  moonSize: 0.07
-  moonSoftEdge: 0.22
-  moonGlow: 0.236
+  moonSize: 0.311
+  moonSoftEdge: 0.373
+  moonGlow: 0.087
   useBakedMoon: 0
   moonCubemap: {fileID: 0}
   moonLightColor: {r: 0.8431373, g: 0.9843138, b: 1, a: 1}
   moonLightIntensity: 0.046027362
   customCloudTexture: {fileID: 0}
   enableHorizonCloud: 1
-  horizonCloudColor: {r: 1, g: 1, b: 1, a: 1}
-  horizonCloudStartPosition: -0.208
+  horizonCloudColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
+  horizonCloudStartPosition: -0.251
   horizonCloudEndPosition: 0.35
   horizonCloudSize: 5
   horizonCloudStep: 25
@@ -106,12 +106,12 @@ MonoBehaviour:
   overheadCloudColor: {r: 1, g: 1, b: 1, a: 0.22709298}
   overheadCloudAltitude: 1000
   overheadCloudSize: 2.72
-  overheadCloudStep: 2
-  overheadCloudAnimationSpeed: 50
+  overheadCloudStep: 3
+  overheadCloudAnimationSpeed: 10
   overheadCloudFlowDirectionX: 0.575
   overheadCloudFlowDirectionZ: 1
   overheadCloudCastShadow: 0
-  overheadCloudShadowClipMask: 0.035
+  overheadCloudShadowClipMask: 0
   enableDetailOverlay: 0
   detailOverlayTintColor: {r: 1, g: 1, b: 1, a: 1}
   detailOverlayCubeMap: {fileID: 8900000, guid: fd076cc0fa28689468954071d2137785,
@@ -177,23 +177,23 @@ Material:
     - _HorizonCloudEndPosition: 0.35
     - _HorizonCloudSize: 5
     - _HorizonCloudStart: -0.01
-    - _HorizonCloudStartPosition: -0.208
+    - _HorizonCloudStartPosition: 0
     - _HorizonCloudStep: 25
-    - _HorizonExponent: 4.999327
+    - _HorizonExponent: 4.0485797
     - _HorizonStep: 1000
     - _HorizonThickness: 1
-    - _MoonGlow: 0.236
-    - _MoonLightIntensity: 0.00017884855
+    - _MoonGlow: 0.24
+    - _MoonLightIntensity: 0.000026331983
     - _MoonSize: 0.07
     - _MoonSoftEdge: 0.22
     - _OverheadCloudAltitude: 1000
-    - _OverheadCloudAnimationSpeed: 50
-    - _OverheadCloudFlowDirectionX: 0.575
-    - _OverheadCloudFlowDirectionZ: 1
+    - _OverheadCloudAnimationSpeed: 10
+    - _OverheadCloudFlowDirectionX: 1
+    - _OverheadCloudFlowDirectionZ: 10
     - _OverheadCloudFlowX: 1
     - _OverheadCloudFlowZ: 1
-    - _OverheadCloudSize: 2.72
-    - _OverheadCloudStep: 2
+    - _OverheadCloudSize: 10
+    - _OverheadCloudStep: 3
     - _StarsDensity0: 0.4
     - _StarsDensity1: 0.34
     - _StarsDensity2: 0.45
@@ -212,27 +212,27 @@ Material:
     - _StarsTwinkle1: 6
     - _StarsTwinkle2: 2
     - _SunGlow: 0.45
-    - _SunLightIntensity: 1
-    - _SunSize: 0.049
-    - _SunSoftEdge: 0.17
+    - _SunLightIntensity: 0.5432903
+    - _SunSize: 0.07
+    - _SunSoftEdge: 0.5
     m_Colors:
     - _DetailOverlayColor: {r: 1, g: 1, b: 1, a: 1}
     - _DetailOverlayTintColor: {r: 1, g: 1, b: 1, a: 1}
-    - _FogColor: {r: 0.8490566, g: 0.69017035, b: 0.6287825, a: 1}
-    - _GroundColor: {r: 0.49999672, g: 0.49999595, b: 0.4999974, a: 1}
+    - _FogColor: {r: 0.89292043, g: 0.8907536, b: 0.81549746, a: 1}
+    - _GroundColor: {r: 0.439043, g: 0.4251859, b: 0.45202643, a: 1}
     - _HorizonCloudColor: {r: 1, g: 1, b: 1, a: 1}
-    - _HorizonColor: {r: 0.8662795, g: 0.97169375, b: 0.9706974, a: 1}
+    - _HorizonColor: {r: 0.89292043, g: 0.8907536, b: 0.81549746, a: 1}
     - _MoonColor: {r: 1, g: 1, b: 1, a: 0}
-    - _MoonDirection: {r: 0.93288887, g: 0.36016467, b: 0.000037573278, a: 0}
+    - _MoonDirection: {r: -0.504091, g: 0.3812037, b: -0.77496856, a: 0}
     - _MoonLightColor: {r: 0.8431373, g: 0.9843138, b: 1, a: 1}
-    - _OverheadCloudColor: {r: 1, g: 1, b: 1, a: 0.47058225}
-    - _SkyColor: {r: 0.31835008, g: 0.64634705, b: 0.9245234, a: 1}
+    - _OverheadCloudColor: {r: 1, g: 1, b: 1, a: 0.5079706}
+    - _SkyColor: {r: 0.2588545, g: 0.49256182, b: 0.7474876, a: 1}
     - _StarsColor0: {r: 0.96470594, g: 0.9450981, b: 0.76470596, a: 1}
     - _StarsColor1: {r: 1, g: 0.5294118, b: 0.93725497, a: 1}
     - _StarsColor2: {r: 0, g: 0.92549026, b: 1, a: 1}
-    - _SunColor: {r: 0.9716981, g: 0.92267036, b: 0.8403877, a: 1}
-    - _SunDirection: {r: -0.95672065, g: -0.29100794, b: 0.00003901869, a: 0}
-    - _SunLightColor: {r: 1, g: 0.99511117, b: 0.8632076, a: 1}
+    - _SunColor: {r: 0.9716981, g: 0.9245033, b: 0.8463369, a: 1}
+    - _SunDirection: {r: 0.16694136, g: -0.60910374, b: 0.77532136, a: 0}
+    - _SunLightColor: {r: 1, g: 0.9921569, b: 0.90196085, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &8993251732621375409
 Material:

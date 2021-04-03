@@ -5,11 +5,13 @@ using Pinwheel.Jupiter;
 
 public class TimeControl : MonoBehaviour
 {
-    [SerializeField] JDayNightCycle cycleObject;
+    JDayNightCycle cycleObject;
     // Start is called before the first frame update
 
-    private void Start()
+    IEnumerator Start()
     {
+        yield return new WaitUntil(() => GameController.Instance != null);
+        cycleObject = GameController.Instance.dayNightCycle;
         GameController.Instance.TimeSetTrigger += WorldLight;
         StartCoroutine(StartAmbiance());
     }

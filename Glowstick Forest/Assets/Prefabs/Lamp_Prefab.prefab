@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1948787240
 Transform:
   m_ObjectHideFlags: 0
@@ -174,10 +174,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3943222731577196355}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9da5887f2fcc5247a40e388db823373, type: 3}
+  m_Script: {fileID: 11500000, guid: fb0fa2193b125614d9da707da3c99aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 8378338788334435582}
+  renderer: {fileID: 5659531326214450496}
   matIndex: 0
 --- !u!114 &293344927753109861
 MonoBehaviour:
@@ -188,10 +188,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3943222731577196355}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9da5887f2fcc5247a40e388db823373, type: 3}
+  m_Script: {fileID: 11500000, guid: fb0fa2193b125614d9da707da3c99aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 5659531326214450496}
+  renderer: {fileID: 5129937205227253502}
   matIndex: 0
 --- !u!1 &4054448722798598995
 GameObject:
@@ -343,7 +343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4164251147774176359
 Transform:
   m_ObjectHideFlags: 0
@@ -539,7 +539,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8019732453664838912}
-  m_Mesh: {fileID: 3468755486377148355, guid: 05841244275f33e4c94c3af57168237f, type: 3}
+  m_Mesh: {fileID: 3468755486377148355, guid: e5b12a23237ab3747acede5c03c4283f, type: 3}
 --- !u!23 &5659531326214450496
 MeshRenderer:
   m_ObjectHideFlags: 0
