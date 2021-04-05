@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class OrganicLight : MonoBehaviour
 {
-    [SerializeField] Renderer renderer;
+    [SerializeField] new Renderer renderer;
     [SerializeField] int matIndex = 0;
 
     IEnumerator Start()
     {
         yield return new WaitUntil(() => GameController.Instance != null);
-        GameController.Instance.OnTimeTrigger += TriggerLight;
+        LightController.Instance.OnLightStateChange += TriggerLight;
     }
 
     private void OnDestroy()
     {
-        GameController.Instance.OnTimeTrigger -= TriggerLight;
+        LightController.Instance.OnLightStateChange -= TriggerLight;
     }
+
     void TriggerLight(bool state)
     {
         if (state) {

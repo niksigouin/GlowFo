@@ -10,7 +10,7 @@ using Object = UnityEngine.Object;
 
 public class OSCManager : MonoBehaviour
 {
-    [SerializeField] bool enableOSC = false;
+    //[SerializeField] bool enableOSC = false;
     [SerializeField] public OSC osc;
     public static OSCManager Instance;
     [SerializeField] public GameObject playerHead;
@@ -58,6 +58,7 @@ public class OSCManager : MonoBehaviour
     public void UpdateValue(string k, OscMessage m)
     {
         messages[k] = m;
+        //Debug.Log($"{k} : {m}");
     }
 
     void SendOSCMessages()
