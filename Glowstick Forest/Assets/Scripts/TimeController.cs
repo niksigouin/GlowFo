@@ -70,33 +70,14 @@ public class TimeController : MonoBehaviour
         cycleObject.AutoTimeIncrement = state;
     }
 
-    //void WorldLight(bool state)
-    //{
-    //    if (state)
-    //    {
-    //        SetDay();
-    //    } else
-    //    {
-    //        SetNight();
-    //    }
-    //}
-
     public void SetDay()
     {
         OnTimeChange(12);
-        //OscMessage message = new OscMessage();
-        //message.address = "/ambiance/cycle";
-        //message.values.Add(0);
-        //OSCManager.Instance.osc.Send(message);
     }
 
     public void SetNight()
     {
         OnTimeChange(24);
-        //OscMessage message = new OscMessage();
-        //message.address = "/ambiance/cycle";
-        //message.values.Add(1);
-        //OSCManager.Instance.osc.Send(message);
     }
 
     #region OSC
