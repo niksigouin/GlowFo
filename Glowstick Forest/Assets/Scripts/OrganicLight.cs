@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class OrganicLight : MonoBehaviour
 {
-    [SerializeField] new Renderer renderer;
-    [SerializeField] int matIndex = 0;
+    [SerializeField] List<OrgLight> lights;
 
     IEnumerator Start()
     {
@@ -20,13 +20,28 @@ public class OrganicLight : MonoBehaviour
 
     void TriggerLight(bool state)
     {
-        if (state) {
-            renderer.materials[matIndex].EnableKeyword("_EMISSION");
-        } else
+        foreach (OrgLight light in lights)
         {
-            renderer.materials[matIndex].DisableKeyword("_EMISSION");
+            light.ToggleLight(state);
         }
-
     }
 }
 
+[Serializable]
+public class OrgLight
+{
+    [SerializeField] Renderer renderer;
+    [SerializeField] int matIndex;
+    
+    public void ToggleLight(bool state)
+    {
+        if (state)
+        {
+            renderer.materials[matIndex].EnableKeyword("_EMISSION");
+        }
+        else
+        {
+            renderer.materials[matIndex].DisableKeyword("_EMISSION");
+        }
+    }
+}

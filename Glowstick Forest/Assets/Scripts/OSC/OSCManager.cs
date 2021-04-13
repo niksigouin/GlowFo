@@ -4,13 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System.Linq;
-using System.Text;
-using JetBrains.Annotations;
-using Object = UnityEngine.Object;
 
 public class OSCManager : MonoBehaviour
 {
-    //[SerializeField] bool enableOSC = false;
     [SerializeField] public OSC osc;
     public static OSCManager Instance;
     [SerializeField] public GameObject playerHead;
@@ -35,6 +31,11 @@ public class OSCManager : MonoBehaviour
         global.address = "/manager";
         global.values.Add(0);
         osc.Send(global);
+        OscMessage message = new OscMessage();
+        message.address = "/ambiance/state";
+        message.values.Add(0);
+        osc.Send(message);
+        Debug.Log(message.ToString());
         Debug.Log($"Shutting Down: {global}");
     }
 
